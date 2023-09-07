@@ -1,0 +1,40 @@
+@media (min-width: 992px) and (max-width: 1200px) {
+    .card{
+        width: 28rem;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .card{
+        width: 22rem;
+    }
+}
+@media (min-width: 1400px) {
+    .card{
+        width: 19rem;
+    }
+}
+
+.margin{
+    margin: 0px 10px 0px 10px;
+}
+
+
+
+
+.card:hover{
+    transform: scale(1.01);
+    transition: 0.2s;
+    /* background-color: rgb(252, 252, 252); */
+    opacity: 0.8;
+}
+
+/* .heading{
+    color: rgba(0, 0, 0, 0.708);
+} */
+
+.active{
+    border-bottom: 2px solid white;
+}
+img:not([src]) {
+display: none;
+}
