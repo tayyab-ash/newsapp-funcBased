@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## DONT FORGET TO ADD THE FOLLOWING PACKAGES
+npm i react-infinite-scroll-component
+npm i react-top-loading-bar
+
 ## Available Scripts
 
 In the project directory, you can run:

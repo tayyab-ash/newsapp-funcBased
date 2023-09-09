@@ -1,41 +1,31 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import india from './images/india.png'
-import us from './images/united-states.png'
+// import india from './images/india.png'
+// import us from './images/united-states.png'
 import './NewsItem.css'
-import './ModeButton.css'
-const countryImages = {
-  in: india,
-  us: us
-};
+// import './ModeButton.css'
+// import PropTypes from 'prop-types'
+// const countryImages = {
+//   in: india,
+//   us: us
+// };
 
-export class Navbar extends Component {
+function Navbar(props) {
 
-  constructor(props) {
-    super(props);
-    const storedFlag = localStorage.getItem('selectedFlag');
-    this.state = {
-      selectedCountry: storedFlag || 'in' //retrieves the country from the Local storage if no Key is pressent the in the local storage 'in' is used.
-    };
-  }
+  // const [selectedCountry, setselectedCountry] = useState('in')
+  // const storedFlag = localStorage.getItem('selectedFlag');
 
-  handleChangeCountry(newCountry) {
-    this.props.changeCountry(newCountry)
-    localStorage.setItem('selectedFlag', newCountry); //stores the selected country Flag key in the local storage when the country is changed.
-    this.setState({
-      selectedCountry: newCountry,
-    });
-  }
+  // const handleChangeCountry=(newCountry)=> {
+  //   props.changeCountry(newCountry)
+  //   // localStorage.setItem('selectedFlag', newCountry); //stores the selected country Flag key in the local storage when the country is changed.
+  //   setselectedCountry(newCountry)
+  // }
 
-  handleBoxChange(){
-    this.props.changeMode();
-  }
-
-
-  render() {
-    const { selectedCountry } = this.state;
+  // const handleBoxChange=()=>{
+  //   props.changeMode();
+  // }
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary  ">
+      <nav className="navbar navbar-expand-lg sticky-top navbar-dark bg-dark border-bottom border-secondary  ">
         <div className="container-fluid">
           <div className='d-flex justify-content-center align-items-center'>
             <img src="https://i.ibb.co/QdZ1f11/live.png" className='mx-1' width='40px' alt="" />
@@ -54,8 +44,8 @@ export class Navbar extends Component {
               <li className="nav-item"><NavLink className="nav-link" activeclassname="active" to="/sports">Sports</NavLink></li>
               <li className="nav-item"><NavLink className="nav-link" activeclassname="active" to="/technology">Technology</NavLink></li>
             </ul>
-            <label className="switch">
-              <input type="checkbox" onChange={()=> this.handleBoxChange()} />
+            {/* <label className="switch">
+              <input type="checkbox" onChange={handleBoxChange()} />
               <span className="slider"></span>
             </label>
             <div className="btn-group">
@@ -69,16 +59,15 @@ export class Navbar extends Component {
                 <span><img src={countryImages[selectedCountry]} width='24px' alt="" /></span>
               </button>
               <ul className="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end">
-                <li><button className="dropdown-item d-flex justify-content-between" onClick={() => this.handleChangeCountry('in')}> <span>India</span>  <span><img src={india} width='24px' alt="" /></span></button></li>
-                <li><button className="dropdown-item d-flex justify-content-between" onClick={() => this.handleChangeCountry('us')}> <span>US</span>  <span><img src={us} alt="" width='24px' /></span></button></li>
+                <li><button className="dropdown-item d-flex justify-content-between" onClick={handleChangeCountry('in')}> <span>India</span>  <span><img src={india} width='24px' alt="" /></span></button></li>
+                <li><button className="dropdown-item d-flex justify-content-between" onClick={handleChangeCountry('us')}> <span>US</span>  <span><img src={us} alt="" width='24px' /></span></button></li>
               </ul>
-            </div>
+            </div> */}
             
           </div>
         </div>
       </nav>
     )
-  }
 }
 
 export default Navbar 
